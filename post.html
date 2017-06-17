@@ -16,6 +16,17 @@
     <meta property="og:image"              content="https://griggril000.github.io/rileys-bootstrap-blog/img/post-sample-image.jpg"/>
 
     <title>Riley's Bootstrap Blog - Post</title>
+    
+    <!-- Facebook Comments Script -->
+    
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=114848079120127";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -129,7 +140,8 @@
 
                     <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
                     
-                    <div class="sharethis-inline-reaction-buttons"></div>
+                    <div class="fb-comments" data-href="https://griggril000.github.io/rileys-bootstrap-blog/post.html" data-numposts="5" 	
+data-order-by="reverse_time"></div>
                 </div>
             </div>
         </div>
