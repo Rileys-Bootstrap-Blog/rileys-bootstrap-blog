@@ -4,7 +4,6 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: auto;
 }
 
 *, *:before, *:after {
@@ -17,6 +16,7 @@
   background: #fff;
   transform: translateZ(0);
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  overflow: auto;
 }
 
 input[type="checkbox"] {
@@ -54,7 +54,7 @@ label:after {
 section {
   height: 0;
   transition: .3s all;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #toggle1:checked ~ label[for*='1']:after,
