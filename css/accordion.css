@@ -10,17 +10,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  font: 16px/1 'Open Sans', sans-serif;
-  color: #555;
-  background: #e5e5e5;
-}
-
-body {
-  padding: 50px;
-}
-
 .togglebox {
   width: 400px;
   margin: 0 auto;
@@ -79,11 +68,4 @@ section {
 #toggle3:checked ~ #content3,
 #toggle4:checked ~ #content4 {
   height: 200px;
-}
-
-p {
-  margin: 15px 0;
-  padding: 0 20px;
-  font-size: 12px;
-  line-height: 1.5;
 }
