@@ -62,10 +62,3 @@ section {
 #toggle4:checked ~ label[for*='4']:after {
   transform: rotate(0deg);
 }
-
-#toggle1:checked ~ #content1,
-#toggle2:checked ~ #content2,
-#toggle3:checked ~ #content3,
-#toggle4:checked ~ #content4 {
-  height: 200px;
-}
