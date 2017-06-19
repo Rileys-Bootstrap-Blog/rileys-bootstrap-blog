@@ -29,9 +29,9 @@ label {
   display: block;
   height: 50px;
   line-height: 50px;
-  padding: 0 20px;
+  padding: 20px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 800;
   border-top: 1px solid #ddd;
   background: #fff;
   cursor: pointer;
