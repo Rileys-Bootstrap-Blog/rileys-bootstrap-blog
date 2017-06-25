@@ -6,7 +6,7 @@
 
 
 /* magenta scrollbar code */
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
 }
  
