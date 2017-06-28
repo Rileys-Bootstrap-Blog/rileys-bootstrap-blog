@@ -46,3 +46,9 @@
 											  transparent)
 }
 */
+
+.intro-header, page-heading {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+    background-color: #000;
+}
