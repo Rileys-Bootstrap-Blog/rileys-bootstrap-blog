@@ -15,8 +15,8 @@
 }
  
 ::-webkit-scrollbar-thumb {
-  background-color: fuchsia;
-  outline: 1px solid magenta;
+  background-color: #EDAF66;
+  outline: 1px solid #EDAF66;
 }
 
 /*
