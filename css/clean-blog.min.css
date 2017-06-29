@@ -48,6 +48,5 @@
 */
 
 .intro-header, page-heading {
-    opacity: 0.3;
-    filter: alpha(opacity=30);
+    background: #3db6b8;
 }
