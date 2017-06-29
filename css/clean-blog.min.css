@@ -48,9 +48,6 @@
 */
 
 .intro-header, page-heading {
-    -webkit-filter: grayscale(100%);
-       -moz-filter: grayscale(100%);
-         -o-filter: grayscale(100%);
-        -ms-filter: grayscale(100%);
-            filter: grayscale(100%);
+    opacity: 0.3;
+    filter: alpha(opacity=30);
 }
