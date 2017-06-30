@@ -47,7 +47,7 @@
 }
 */
 
-.intro-header, page-heading {
+.intro-header {
     opacity: 0.2;
     filter: alpha(opacity=20); /* For IE8 and earlier */
 }
