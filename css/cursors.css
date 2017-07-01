@@ -1,9 +1,9 @@
-.auto            { cursor: auto; }
-.default         { cursor: default; }
+.auto            { cursor: url('https://griggril000.github.io/rileys-bootstrap-blog/img/magnify.cur'); }
+.default         { cursor: url('https://griggril000.github.io/rileys-bootstrap-blog/img/magnify.cur'); }
 .none            { cursor: none; }
 .context-menu    { cursor: context-menu; }
 .help            { cursor: help; }
-.pointer         { cursor: pointer; }
+.pointer         { cursor: url('https://griggril000.github.io/rileys-bootstrap-blog/img/magnify.cur'); }
 .progress        { cursor: progress; }
 .wait            { cursor: wait; }
 .cell            { cursor: cell; }
