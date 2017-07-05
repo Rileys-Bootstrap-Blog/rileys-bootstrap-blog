@@ -1,4 +1,7 @@
 https://griggril000.github.io/rileys-bootstrap-blog/
 https://griggril000.github.io/rileys-bootstrap-blog/index.html
+https://griggril000.github.io/rileys-bootstrap-blog/posts/archives/
 https://griggril000.github.io/rileys-bootstrap-blog/posts/2017/july/july.html
+https://griggril000.github.io/rileys-bootstrap-blog/posts/2017/july/fourth.html
 https://griggril000.github.io/rileys-bootstrap-blog/posts/2017/june/bunny-face-paint.html
+https://griggril000.github.io/rileys-bootstrap-blog/posts/archives/index.html
