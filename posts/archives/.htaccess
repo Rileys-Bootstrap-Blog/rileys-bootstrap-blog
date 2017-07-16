@@ -1,0 +1,26 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^https://griggril000.github.io/rileys-bootstrap-blog/home[nc]
+RewriteRule ^(.*)$ http://www.https://griggril000.github.io/rileys-bootstrap-blog/home/$1 [r=301,nc]
+
+//Password Protect file
+<Files https://griggril000.github.io/rileys-bootstrap-blog/posts/archives/>
+AuthName "Prompt"
+AuthType Basic
+AuthUserFile https://griggril000.github.io/rileys-bootstrap-blog/posts/archives/.htpasswd
+Require valid-user
+</Files>
+
+//Change default directory page
+DirectoryIndex home.html
+
+//Prevent viewing of .htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+//Prevent directory listings
+Options All -Indexes
+ 
