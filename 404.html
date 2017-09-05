@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <title>404 Page Not Found</title>
     <meta name="robots" content="nofollow"/>
+    <script type="text/javascript">
+  var imageURLs = [
+       "/img/040314_error404-page_red.gif"
+     , "/img/404.gif"
+     , "/img/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4747503464704f7449746d75492f736f757263652e676966.gif"
+     , "/img/giphy.gif"
+  ];
+  function getImageTag() {
+    var img = '<img src=\"';
+    var randomIndex = Math.floor(Math.random() * imageURLs.length);
+    img += imageURLs[randomIndex];
+    img += '\" alt=\"Some alt text\"/>';
+    return img;
+  }
+</script>
   </head>
   <body>
+  <script type="text/javascript">
+    document.write(getImageTag());
+  </script>
     <img src="/img/404.gif">
     <p>Uh oh. We couldn't find the page you were looking for. Try <a href="/">going home</a>.</p>
   </body>
