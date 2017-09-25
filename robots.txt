@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Sitemap: https://rileys-bootstrap-blog.github.io/sitemap.xml
