@@ -48,8 +48,6 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- Date JS -->
-    <script src="date.js"></script>
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -117,6 +115,24 @@
                         <h1>Riley's Bootstrap Blog</h1>
                         <hr class="small">
                         <span class="subheading">A Blog By Riley Grigg</span>
+                        
+                        <script>
+<!-- Begin
+var now = new Date();
+var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+function fourdigits(number) {
+    return (number < 1000) ? number + 1900 : number;
+}
+today =  days[now.getDay()] + ", " +
+         months[now.getMonth()] + " " +
+         date + ", " +
+         (fourdigits(now.getYear())) ;
+document.write(today);
+//  End -->
+</script>
+                        
                         <span claas="subheading"><p>Would you like your birthday or an event on <a style="color: orange;" href="/posts/2017/october/october.html">this month's calendar</a>? Click the contact me button on the right of the page to submit an event for review.</p><span>
                     </div>
                 </div>
