@@ -54,19 +54,3 @@
 .home-date, .date-announcement {
 	font-family:Lora,'Times New Roman',serif;font-size:20px;background:rgba(255, 153, 0, 0.7);
 }
-
-.date-announcement {
-	-webkit-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Safari 4+ */
-        -moz-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Fx 5+ */
-        -o-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Opera 12+ */
-        animation: NAME-YOUR-ANIMATION 1s infinite;  /* IE 10+, Fx 29+ */
-}
-
-@-webkit-keyframes NAME-YOUR-ANIMATION {
-  0%, 49% {
-    background: rgba(255, 153, 0, 0.3);
-  }
-  50%, 100% {
-    background:rgba(255, 153, 0, 0.7);
-  }
-}
