@@ -129,7 +129,21 @@
                     
                     
                     <h2 class="section-heading">My Costume</h2>
-                    <img src="/img/E2F11CE5-488A-4185-A188-BE508AB8436F.png" alt="image coming soon">
+                    <script language="javascript" type="text/javascript">
+    function chngimg() {
+        var img = document.getElementById('imgplus').src;
+        if (img.indexOf('Plus.gif')!=-1) {
+            document.getElementById('imgplus').src  = '/img/2D60AB27-16D8-4667-8447-6117BE5F7C9A.jpeg';
+        }
+         else {
+           document.getElementById('imgplus').src = '/img/81F4FBA4-57F2-4ADA-AAAB-56D6C69FFA2A.jpeg';
+       }
+
+    }
+</script>
+
+<img id="imgplus" alt="" src="Images/Plus.gif" onmouseover="this.style.cursor='pointer'" onclick="chngimg()"   />
+                    
 
                     <p>Like this article on Facebook</p><div class="fb-like" data-href="https://rileys-bootstrap-blog.github.io/posts/2017/october/halloween.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                 </article>
