@@ -6,8 +6,8 @@ Created by: Anonymous | http://musikimiz.googlepages.comLicensed under: Creative
 function pixTimeChange() {
   var t=new Date();
   var h = t.getHours();
-  var r1="/img/images.png";
-  var r2="/img/imageedit_1_6238954704.png";
+  var r1="/img/640A2BA5-76CE-4254-8CFF-6150BE695475.jpeg";
+  var r2="/img/216B7378-420C-4B55-881B-1160D1F24FFC.jpeg";
   var el=document.getElementById('myimage');
 
   // See the time below. Note: The time is in 24 hour format.
