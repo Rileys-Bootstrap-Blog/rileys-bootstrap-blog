@@ -32,7 +32,7 @@
 }
 ::-webkit-scrollbar-thumb
 {
-	background-color: #98ff98;
+	background-color: #ff5900;
 	border-radius: 10px;
 	background-image: -webkit-linear-gradient(0deg,
 	                                          rgba(255, 255, 255, 0.5) 25%,
@@ -49,7 +49,7 @@
 }
 
 .home-date, .date-announcement {
-	font-family:Lora,'Times New Roman',serif;font-size:20px;background:GreenYellow;
+	font-family:Lora,'Times New Roman',serif;font-size:20px;background: #ff5900;
 }
 
 .progress-container {
@@ -67,7 +67,7 @@
     top: 0;
   z-index: 4;
   height: 8px;
-  background: #98ff98;
+  background: #ff5900;
   width: 0%;
 }
 
