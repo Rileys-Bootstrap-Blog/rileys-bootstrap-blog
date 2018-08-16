@@ -16,27 +16,7 @@
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
-<!-- start of script to disable right clicking -->
-    <!-- script source: https://www.computerhope.com/j20.htm -->
-    <script>
-      var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-  
-      if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
-  
-      function mischandler(){
-    return false;
-  }
-  
-      function mousehandler(e){
-        var myevent = (isNS) ? e : event;
-        var eventbutton = (isNS) ? myevent.which : myevent.button;
-        if((eventbutton==2)||(eventbutton==3)) return false;
-  }
-      document.oncontextmenu = mischandler;
-      document.onmousedown = mousehandler;
-      document.onmouseup = mousehandler;
-    </script>
-    <!-- end of script to disable right clicking -->
+
  
 * ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
