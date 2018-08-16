@@ -63,6 +63,28 @@
     <!-- prevents images on page from being pinned to Pinterest -->
     <meta name="pinterest" content="nopin"/>
     
+    <!-- start of script to disable right clicking -->
+    <!-- script source: https://www.computerhope.com/j20.htm -->
+    <script>
+      var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+  
+      if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+  
+      function mischandler(){
+    return false;
+  }
+  
+      function mousehandler(e){
+        var myevent = (isNS) ? e : event;
+        var eventbutton = (isNS) ? myevent.which : myevent.button;
+        if((eventbutton==2)||(eventbutton==3)) return false;
+  }
+      document.oncontextmenu = mischandler;
+      document.onmousedown = mousehandler;
+      document.onmouseup = mousehandler;
+    </script>
+    <!-- end of script to disable right clicking -->
+    
     <script>
   (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
     t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
