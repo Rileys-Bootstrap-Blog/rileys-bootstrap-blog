@@ -23,8 +23,8 @@
 * }
  
 * ::-webkit-scrollbar-thumb {
- * background-color: #FFA500;
- * outline: 1px solid #FFA500;
+ * background-color: #6fc12d;
+ * outline: 1px solid #6fc12d;
 } */
 
 /* Candy Cane Style Scroll Bar */
@@ -42,7 +42,7 @@
 }
 ::-webkit-scrollbar-thumb
 {
-	background-color: #FFA500;
+	background-color: #6fc12d;
 	border-radius: 10px;
 	background-image: -webkit-linear-gradient(0deg,
 	                                          rgba(255, 255, 255, 0.5) 25%,
