@@ -58,8 +58,31 @@
    
 }
 
-.home-date, .date-announcement {
+/* .home-date, .date-announcement {
 	font-family:Lora,'Times New Roman',serif;font-size:20px;background: #ffe094;
+} */
+
+.home-date, .date-announcement {
+  background-color: red;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  -webkit-animation: example 1s linear infinite;
+  -moz-animation: example 1s linear infinite;
+  animation: example 1s linear infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0%	{background-color: green;}
+  50%   {background-color: red;}
+  100% {background-color: green;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%	{background-color: green;}
+  50%   {background-color: red;}
+  100% {background-color: green;}
 }
 
 .progress-container {
