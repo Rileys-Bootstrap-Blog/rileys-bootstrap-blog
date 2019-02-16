@@ -58,13 +58,13 @@
    
 }
 
-/* solid colored background */
+/* solid colored background for homepage date and time */
 /* .home-date, .date-announcement {
-	font-family:Lora,'Times New Roman',serif;font-size:20px;background: #ffe094;
+	font-family:Lora,'Times New Roman',serif;font-size:20px;background: #98FB98;
 } */
 
-/* color changing background */
-.home-date, .date-announcement {
+/* color changing background for homepage date and time */
+/* .home-date, .date-announcement {
   font-family:Lora,'Times New Roman',serif;font-size:20px;
   background-color: red;
   -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
@@ -86,7 +86,7 @@
   0%	{background-color: green;}
   50%   {background-color: red;}
   100% {background-color: green;}
-}
+} */
 
 .progress-container {
         position: fixed;
@@ -103,6 +103,6 @@
     top: 0;
   z-index: 4;
   height: 8px;
-  background: #ffe094;
+  background: #32CD32;
   width: 0%;
 }
