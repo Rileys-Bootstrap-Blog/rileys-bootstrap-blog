@@ -78,7 +78,11 @@
       function mousehandler(e){
         var myevent = (isNS) ? e : event;
         var eventbutton = (isNS) ? myevent.which : myevent.button;
-        if((eventbutton==2)||(eventbutton==3)) return false;
+          /* 1=main button usually left mouse button
+           * 2=auxiliary button usually mouse scroll wheel button
+           * 3=secondary button usually right mouse button
+           */
+        if((eventbutton==1)||(eventbutton==2)||(eventbutton==3)) return false;
   }
       document.oncontextmenu = mischandler;
       document.onmousedown = mousehandler;
