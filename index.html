@@ -98,7 +98,7 @@
 </head>
 
         <!-- prevents copy and paste -->
-<body oncopy="return false" oncut="return false" onpaste="return false">
+<body onload="genQuote()" oncopy="return false" oncut="return false" onpaste="return false">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -155,7 +155,7 @@ document.write(today);
                         <br>
                         <iframe src="https://freesecure.timeanddate.com/clock/i5zuu0zh/n220/fn15/fs18/fcfff/tct/pct/ta1" frameborder="0" width="151" height="23" allowTransparency="true"></iframe><br>
 
-                    <div onload="genQuote()">
+                    <div>
                         <script type="text/javascript" src="/js/clean-blog.min.js"></script>
                     <p id="quote">Loading Tip...</p>
                     </div>
