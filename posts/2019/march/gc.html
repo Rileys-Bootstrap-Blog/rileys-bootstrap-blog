@@ -122,7 +122,7 @@
                         <span><a href="#live" style="color:white;">Watch Live</a></span>
                         <br>
                         <script type="text/javascript" src="/js/clean-blog.min.js"></script>
-                        <p id="announce" onmousedown="confAnnounce()" ontouchstart="confAnnounce()" style="color:#2E3192; background-color:white; text-align:center; display:inline;">Loading announcements from conference...</p>
+                        <p id="announce" onmouseup="confAnnounce()" ondblclick="confAnnounce()" style="color:#2E3192; background-color:white; text-align:center; display:inline;">Loading announcements from conference...</p>
                     </div>
                 </div>
             </div>
@@ -148,8 +148,8 @@
                     
                     <h2 class="section-heading">Quotes</h2>
                     
-                    <span class="caption text-muted">Click or tap for a new quote.</span>
-                    <p id="quote" onmousedown="confQuote()" ontouchstart="confQuote()">Loading one of Riley's Favorite Quotes...</p>
+                    <span class="caption text-muted">Click or double tap for a new quote.</span>
+                    <p id="quote" onmousedown="confQuote()" ondblclick="confQuote()">Loading one of Riley's Favorite Quotes...</p>
             
                     <!-- <p><a href="https://docs.google.com/document/d/1mO05ZSz25uF88nrnbTxQcKh7kbYJKe8AIU_hujPiCls" target="_blank">Saturday Morning Session</a></p> -->
                     
