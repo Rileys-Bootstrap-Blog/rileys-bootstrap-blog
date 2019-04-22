@@ -4,127 +4,54 @@
     <meta charset="UTF-8">
     <title>title</title>
   <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    
+    <script type="text/javascript" src="balloons.js"> </script>
+<script type="text/javascript">
+
+/***********************************************
+* Floating image script- By Virtual_Max (http://www.geocities.com/siliconvalley/lakes/8620)
+* Modified by Dynamic Drive for various improvements
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+//Step 1: Define unique variable names depending on number of flying images (ie:3):
+var flyimage1, flyimage2, flyimage3
+
+function pagestart(){
+//Step 2: Using the same variable names as 1), add or delete more of the below lines (60=width, height=80 of image):
+ flyimage1=new Chip("flyimage1",47,68);
+ flyimage2=new Chip("flyimage2",47,68);
+ flyimage3=new Chip("flyimage3",47,68);
+
+
+//Step 3: Using the same variable names as 1), add or delete more of the below lines:
+movechip("flyimage1");
+movechip("flyimage2");
+movechip("flyimage3");
+
+}
+
+if (window.addEventListener)
+window.addEventListener("load", pagestart, false)
+else if (window.attachEvent)
+window.attachEvent("onload", pagestart)
+else if (document.getElementById)
+window.onload=pagestart
+</script>
   </head>
   <body>
-  <!--Copy and paste into your HTML just above the close </BODY> tag. -->
+    
+    <!-- Step 4: Define your flying images. For each image's ID tag, use the same variable names as 1) above -->
+<div id="flyimage1" STYLE="position:absolute; left: -500px; width:47; height:68;">
+  <img src="balloon0.gif" BORDER=0></a>
+</div>
 
-<script language="JavaScript1.2">
-<!-- Begin
-/*
-Float Up Drifter - JavaScript
-Visit www.rainbow.arch.scriptmania.com/scripts/index.html
-  for this script and many more
-*/
-    // Configure below - change number of images to render
-var no = 8; 
-    // Configure speed below
-var speed = 20;   // The smaller the number, the faster the movement
+<div id="flyimage2" STYLE="position:absolute; left: -500px; width:47; height:68;">
+  <img src="balloon1.gif" BORDER=0></a>
+</div>
 
-var floatr = new Array();
-   //  Your image location
-floatr[0] = "balloon0.gif"
-floatr[1] = "balloon1.gif"
-floatr[2] = "balloon2.gif"
-floatr[3] = "balloon3.gif"
-floatr[4] = "balloon4.gif"
-floatr[5] = "balloon5.gif"
-floatr[6] = "balloon6.gif"
-floatr[7] = "balloon7.gif"
-
-
-var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
-var ie4up = (document.all) ? 1 : 0;
-var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
-var dx, xp, yp;    // coordinate and position variables
-var am, stx, sty;  // amplitude and step variables
-var i, doc_width = 800, doc_height = 1800;
-
-if (ns4up||ns6up) {
-        doc_width = self.innerWidth;
-        doc_height = self.innerHeight;
-} else if (ie4up) {
-        doc_width = document.body.clientWidth;
-        doc_height = document.body.clientHeight;
-}
-
-dx = new Array();
-xp = new Array();
-yp = new Array();
-am = new Array();
-stx = new Array();
-sty = new Array();
-j = 0;
-
-for (i = 0; i < no; ++ i) {
-        dx[i] = 0;                        // set coordinate variables
-        xp[i] = Math.random()*(doc_width-50);  // set position variables
-        yp[i] = Math.random()*doc_height;
-        am[i] = Math.random()*20;         // set amplitude variables
-        stx[i] = 0.02 + Math.random()/10; // set step variables
-        sty[i] = 0.7 + Math.random();     // set step variables
-        if (ns4up) {                      // set layers
-                if (i == 0) {
-                        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""+ floatr[j] + "\" border=\"0\"></layer>");
-                } else {
-                        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\""+ floatr[j] + "\" border=\"0\"></layer>");
-                }        } else if (ie4up||ns6up) {                if (i == 0) 
-{
-                        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + floatr[j] + "\" border=\"0\"></div>");
-                } else {
-                        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"VISIBILITY: visible; TOP: 15px; LEFT: 15px; width:1;\"><img src=\"" + floatr[j] + "\" border=\"0\"></div>");
-                }
-        }
-        if (j == (floatr.length-1)) { j = 0; } else { j += 1; }
-}
-
-function floatrNS() {  // Netscape main animation function
-        for (i = 0; i < no; ++ i) {  // iterate for every dot
-                yp[i] -= sty[i];                if (yp[i] < -50) {
-                        xp[i] = Math.random()*(doc_width-am[i]-30);
-                        yp[i] = doc_height;
-                        stx[i] = 0.02 + Math.random()/10;
-                        sty[i] = 0.7 + Math.random();
-                        doc_width = self.innerWidth;
-                        doc_height = self.innerHeight;                }
-                dx[i] += stx[i];
-                document.layers["dot"+i].top = yp[i]+pageYOffset;
-                document.layers["dot"+i].left = xp[i] + 
-am[i]*Math.sin(dx[i]);
-        }
-        setTimeout("floatrNS()", speed);
-}
-
-function floatrIE_NS6() {  // IE main animation function
-        for (i = 0; i < no; ++ i) {  // iterate for every dot
-                yp[i] -= sty[i];
-                if (yp[i] < -50) {
-                        xp[i] = Math.random()*(doc_width-am[i]-30);
-                        yp[i] = doc_height;
-                        stx[i] = 0.02 + Math.random()/10;
-                        sty[i] = 0.7 + Math.random();
-                        doc_width = ns6up?window.innerWidth-5:document.body.clientWidth;
-                        doc_height = ns6up?window.innerHeight-5:document.body.clientHeight;
-                }
-                dx[i] += stx[i];
-                if (ie4up){
-                document.all["dot"+i].style.pixelTop = yp[i]+document.body.scrollTop;
-                document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
-                }
-                else if (ns6up){
-                document.getElementById("dot"+i).style.top=yp[i]+pageYOffset;
-                document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i]);
-                }
-        }
-        setTimeout("floatrIE_NS6()", speed);
-}
-
-if (ns4up) {
-        floatrNS();
-} else if (ie4up||ns6up) {
-        floatrIE_NS6();
-}
-// End -->
-</script>
-<!-- <p><font face="arial" size="-2">Free JavaScript from </font><br><font face="arial, helvetica" size="-2"><a href="http://rainbow.arch.scriptmania.com/scripts/">Rainbow Arch</a></font></p> -->
+<div id="flyimage3" STYLE="position:absolute; left: -500px; width:47; height:68;">
+  <img src="balloon2.gif" BORDER=0></a>
+</div>
   </body>
 </html>
