@@ -4,128 +4,109 @@
     <meta charset="UTF-8">
     <title>Sarah!</title>
   <link rel="stylesheet" href="stylesheet.css" type="text/css">
-<!--Simply copy and paste code into <BODY> of HTML page
-     Just above the close </BODY> tag. -->
+	</head>
+	
+	<body>
+<!--Simply copy and paste into <BODY>  
+     Just above the </BODY> tag. -->
 
 <SCRIPT type="text/javascript">
 /*
-Hearts Fall 1 - Drifter - JavaScript
-Visit www.rainbow.arch.scriptmania.com/scripts/
+Snow Fall Java Script
+Visit http://rainbow.arch.scriptmania.com/scripts/
   for this script and many more
 */
+ 
+//Pre-loads your image/s below
+//Configure below - change URL path to the snow image
 
-// **** Changed to Hearts from Snow ****
+grphcs=new Array(6)
+Image0=new Image();
+Image0.src=grphcs[0]="magic_magenta_partymate.jpeg";
+Image1=new Image();
+Image1.src=grphcs[1]="tropical_teal_partymate.jpeg"
+Image2=new Image();
+Image2.src=grphcs[2]="bright_blue_partymate.jpeg"
+Image3=new Image();
+Image3.src=grphcs[3]="luscious_lavender_partymate.jpeg"
+Image4=new Image();
+Image4.src=grphcs[4]="passion_pink_partymate.jpeg"
+Image4=new Image();
+Image4.src=grphcs[5]="satin_purple_partymate.jpeg"
 
-// Set the number of snowflakes (more than 30 - 40 not recommended)
-var snowmax=12
+//Smoothness depends on image file size, 
+//the smaller the size the more you can use!
 
-// Set the colors for the snow. Add as many colors as you like
-var snowcolor=new Array("#aaaacc","#ddddFF","#ccccDD","#ffffff","#ffc0cb")
+// Configure below - change number of snow to render
+Amount=15; 
 
-// Set the fonts, that create the snowflakes. Add as many fonts as you like
-var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS")
+Ypos=new Array();
+Xpos=new Array();
+Speed=new Array();
+Step=new Array();
+Cstep=new Array();
+ns=(document.layers)?1:0;
+ns6=(document.getElementById&&!document.all)?1:0;
 
-// **** CHANGE YOUR IMAGE HERE ****
-
-// Set the letter that creates your snowflake (recommended: * )
-var snowletter=" <magic_magenta_partymate.jpeg> "
-
-// Set the speed of sinking (recommended values range from 0.3 to 2)
-var sinkspeed=0.6
-
-// Set the maximal-size of your snowflaxes
-var snowmaxsize=40
-
-// Set the minimal-size of your snowflaxes
-var snowminsize=20
-
-// Set the snowing-zone
-// Set 1 for all-over-snowing, set 2 for left-side-snowing
-// Set 3 for center-snowing, set 4 for right-side-snowing
-var snowingzone=1
-
-///////////////////////////////////////////////////////////////////////////
-// CONFIGURATION ENDS HERE
-///////////////////////////////////////////////////////////////////////////
-
-
-// Do not edit below this line
-var snow=new Array()
-var marginbottom
-var marginright
-var timer
-var i_snow=0
-var x_mv=new Array();
-var crds=new Array();
-var lftrght=new Array();
-var browserinfos=navigator.userAgent
-var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
-var ns6=document.getElementById&&!document.all
-var opera=browserinfos.match(/Opera/)
-var browserok=ie5||ns6||opera
-
-function randommaker(range) {
-	rand=Math.floor(range*Math.random())
-    return rand
-}
-
-function initsnow() {
-	if (ie5 || opera) {
-      marginbottom = document.body.clientHeight
-      marginright = document.body.clientWidth
-   }
-   else if (ns6) {
-      marginbottom = window.innerHeight
-      marginright = window.innerWidth
-   }
-	var snowsizerange=snowmaxsize-snowminsize
-	for (i=0;i<=snowmax;i++) {
-		crds[i] = 0;
-    	lftrght[i] = Math.random()*15;
-    	x_mv[i] = 0.03 + Math.random()/10;
-		snow[i]=document.getElementById("s"+i)
-		snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
-		snow[i].size=randommaker(snowsizerange)+snowminsize
-		snow[i].style.fontSize=snow[i].size
-		snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
-		snow[i].sink=sinkspeed*snow[i].size/5
-		if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
-		if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
-		if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
-		if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
-		snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
-		snow[i].style.left=snow[i].posx
-		snow[i].style.top=snow[i].posy
+if (ns){
+	for (i = 0; i < Amount; i++){
+		var P=Math.floor(Math.random()*grphcs.length);
+		rndPic=grphcs[P];
+		document.write("<LAYER NAME='sn"+i+"' LEFT=0 TOP=0><img src="+rndPic+"></LAYER>");
 	}
-	movesnow()
 }
-
-function movesnow() {
-	for (i=0;i<=snowmax;i++) {
-		crds[i] += x_mv[i];
-		snow[i].posy+=snow[i].sink
-		snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i]);
-		snow[i].style.top=snow[i].posy
-
-		if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
-			if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
-			if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
-			if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
-			if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
-			snow[i].posy=0
+else{
+	document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+	for (i = 0; i < Amount; i++){
+		var P=Math.floor(Math.random()*grphcs.length);
+		rndPic=grphcs[P];
+		document.write('<img id="si'+i+'" src="'+rndPic+'" style="position:absolute;top:0px;left:0px">');
+	}
+	document.write('</div></div>');
+}
+WinHeight=(ns||ns6)?window.innerHeight:window.document.body.clientHeight;
+WinWidth=(ns||ns6)?window.innerWidth-70:window.document.body.clientWidth;
+for (i=0; i < Amount; i++){
+	Ypos[i] = Math.round(Math.random()*WinHeight);
+	Xpos[i] = Math.round(Math.random()*WinWidth);
+	Speed[i]= Math.random()*5+3;
+	Cstep[i]=0;
+	Step[i]=Math.random()*0.1+0.05;
+}
+function fall(){
+	var WinHeight=(ns||ns6)?window.innerHeight:window.document.body.clientHeight;
+	var WinWidth=(ns||ns6)?window.innerWidth-70:window.document.body.clientWidth;
+	var hscrll=(ns||ns6)?window.pageYOffset:document.body.scrollTop;
+	var wscrll=(ns||ns6)?window.pageXOffset:document.body.scrollLeft;
+	for (i=0; i < Amount; i++){
+		sy = Speed[i]*Math.sin(90*Math.PI/180);
+		sx = Speed[i]*Math.cos(Cstep[i]);
+		Ypos[i]+=sy;
+		Xpos[i]+=sx;
+		if (Ypos[i] > WinHeight){
+			Ypos[i]=-60;
+			Xpos[i]=Math.round(Math.random()*WinWidth);
+			Speed[i]=Math.random()*5+3;
 		}
+		if (ns){
+			document.layers['sn'+i].left=Xpos[i];
+			document.layers['sn'+i].top=Ypos[i]+hscrll;
+		}
+		else if (ns6){
+			document.getElementById("si"+i).style.left=Math.min(WinWidth,Xpos[i]);
+			document.getElementById("si"+i).style.top=Ypos[i]+hscrll;
+		}
+		else{
+			eval("document.all.si"+i).style.left=Xpos[i];
+			eval("document.all.si"+i).style.top=Ypos[i]+hscrll;
+		}
+		Cstep[i]+=Step[i];
 	}
-	var timer=setTimeout("movesnow()",50)
+	setTimeout('fall()',115);
 }
-
-for (i=0;i<=snowmax;i++) {
-	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
-}
-if (browserok) {
-	window.onload=initsnow
-}
-</script>
-
-<!-- <p><font face="arial" size="-2">Free JavaScript from </font><br><font face="arial, helvetica" size="-2"><a href="http://rainbow.arch.scriptmania.com/scripts/">Rainbow Arch</a></font></p> -->
+window.onload=fall
+//-->
+</SCRIPT>
+<!- <p><font face="arial" size="-2">Free JavaScript from </font><br><font face="arial, helvetica" size="-2"><a href="http://rainbow.arch.scriptmania.com/scripts/">Rainbow Arch</a></font></p> -->
   </body>
 </html>
