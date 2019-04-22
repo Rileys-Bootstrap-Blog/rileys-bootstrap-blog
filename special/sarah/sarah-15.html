@@ -4,54 +4,128 @@
     <meta charset="UTF-8">
     <title>Sarah!</title>
   <link rel="stylesheet" href="stylesheet.css" type="text/css">
-    
-    <script type="text/javascript" src="balloons.js"> </script>
-<script type="text/javascript">
+<!--Simply copy and paste code into <BODY> of HTML page
+     Just above the close </BODY> tag. -->
 
-/***********************************************
-* Floating image script- By Virtual_Max (http://www.geocities.com/siliconvalley/lakes/8620)
-* Modified by Dynamic Drive for various improvements
-* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-***********************************************/
+<SCRIPT type="text/javascript">
+/*
+Hearts Fall 1 - Drifter - JavaScript
+Visit www.rainbow.arch.scriptmania.com/scripts/
+  for this script and many more
+*/
 
-//Step 1: Define unique variable names depending on number of flying images (ie:3):
-var flyimage1, flyimage2, flyimage3
+// **** Changed to Hearts from Snow ****
 
-function pagestart(){
-//Step 2: Using the same variable names as 1), add or delete more of the below lines (60=width, height=80 of image):
- flyimage1=new Chip("flyimage1",47,68);
- flyimage2=new Chip("flyimage2",47,68);
- flyimage3=new Chip("flyimage3",47,68);
+// Set the number of snowflakes (more than 30 - 40 not recommended)
+var snowmax=12
+
+// Set the colors for the snow. Add as many colors as you like
+var snowcolor=new Array("#aaaacc","#ddddFF","#ccccDD","#ffffff","#ffc0cb")
+
+// Set the fonts, that create the snowflakes. Add as many fonts as you like
+var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS")
+
+// **** CHANGE YOUR IMAGE HERE ****
+
+// Set the letter that creates your snowflake (recommended: * )
+var snowletter=" <magic_magenta_partymate.jpeg> "
+
+// Set the speed of sinking (recommended values range from 0.3 to 2)
+var sinkspeed=0.6
+
+// Set the maximal-size of your snowflaxes
+var snowmaxsize=40
+
+// Set the minimal-size of your snowflaxes
+var snowminsize=20
+
+// Set the snowing-zone
+// Set 1 for all-over-snowing, set 2 for left-side-snowing
+// Set 3 for center-snowing, set 4 for right-side-snowing
+var snowingzone=1
+
+///////////////////////////////////////////////////////////////////////////
+// CONFIGURATION ENDS HERE
+///////////////////////////////////////////////////////////////////////////
 
 
-//Step 3: Using the same variable names as 1), add or delete more of the below lines:
-movechip("flyimage1");
-movechip("flyimage2");
-movechip("flyimage3");
+// Do not edit below this line
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)
+var browserok=ie5||ns6||opera
 
+function randommaker(range) {
+	rand=Math.floor(range*Math.random())
+    return rand
 }
 
-if (window.addEventListener)
-window.addEventListener("load", pagestart, false)
-else if (window.attachEvent)
-window.attachEvent("onload", pagestart)
-else if (document.getElementById)
-window.onload=pagestart
+function initsnow() {
+	if (ie5 || opera) {
+      marginbottom = document.body.clientHeight
+      marginright = document.body.clientWidth
+   }
+   else if (ns6) {
+      marginbottom = window.innerHeight
+      marginright = window.innerWidth
+   }
+	var snowsizerange=snowmaxsize-snowminsize
+	for (i=0;i<=snowmax;i++) {
+		crds[i] = 0;
+    	lftrght[i] = Math.random()*15;
+    	x_mv[i] = 0.03 + Math.random()/10;
+		snow[i]=document.getElementById("s"+i)
+		snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+		snow[i].size=randommaker(snowsizerange)+snowminsize
+		snow[i].style.fontSize=snow[i].size
+		snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+		snow[i].sink=sinkspeed*snow[i].size/5
+		if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+		if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+		if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+		if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+		snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+		snow[i].style.left=snow[i].posx
+		snow[i].style.top=snow[i].posy
+	}
+	movesnow()
+}
+
+function movesnow() {
+	for (i=0;i<=snowmax;i++) {
+		crds[i] += x_mv[i];
+		snow[i].posy+=snow[i].sink
+		snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i]);
+		snow[i].style.top=snow[i].posy
+
+		if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+			if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+			if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+			if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+			if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+			snow[i].posy=0
+		}
+	}
+	var timer=setTimeout("movesnow()",50)
+}
+
+for (i=0;i<=snowmax;i++) {
+	document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+	window.onload=initsnow
+}
 </script>
-  </head>
-  <body>
-    
-    <!-- Step 4: Define your flying images. For each image's ID tag, use the same variable names as 1) above -->
-<div id="flyimage1" STYLE="position:absolute; left: -500px; width:47; height:68;">
-  <img src="bright_blue_partymate.jpeg" BORDER=0></a>
-</div>
 
-<div id="flyimage2" STYLE="position:absolute; left: -500px; width:47; height:68;">
-  <img src="tropical_teal_partymate.jpeg" BORDER=0></a>
-</div>
-
-<div id="flyimage3" STYLE="position:absolute; left: -500px; width:47; height:68;">
-  <img src="luscious_lavender_partymate.jpeg" BORDER=0></a>
-</div>
+<!-- <p><font face="arial" size="-2">Free JavaScript from </font><br><font face="arial, helvetica" size="-2"><a href="http://rainbow.arch.scriptmania.com/scripts/">Rainbow Arch</a></font></p> -->
   </body>
 </html>
